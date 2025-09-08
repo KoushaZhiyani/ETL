@@ -1,0 +1,3 @@
+2025-09-03 13:47:30 - Sell Record Prev: 9172.0, Sell Record Now: 9180.0
+2025-09-04 08:01:30 - Sell Record Prev: 9180.0, Sell Record Now: 9184.0
+2025-09-04 12:11:13 - Sell Record Prev: 9184.0, Sell Record Now: 9283.0
