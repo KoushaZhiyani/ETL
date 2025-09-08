@@ -17,9 +17,7 @@ def save_table_to_sql(df, table_name, if_exists='append'):
     if_exists: رفتار در صورت وجود جدول ('replace'، 'append'  'fail')
 
     """
-    # print(df.columns)
-    # input(f"✅ جدول '{table_name}' با موفقیت در دیتابیس ذخیره شد.")
-############################# dbo check
+
     list_persain_str = ["Fact_Sell", "Fact_Return"]
     if table_name in list_persain_str:
         df.to_sql(name=table_name, con=engine, schema="dbo", index=False, if_exists=if_exists,     dtype={
@@ -38,14 +36,15 @@ def save_table_to_sql(df, table_name, if_exists='append'):
     else:
         df.to_sql(name=table_name, con=engine, schema="dbo", index=False, if_exists=if_exists)
 
-server = 'localhost'
-database = 'PWBCity'
+server = ''
+database = ''
 
 
 params = urllib.parse.quote_plus(
-    f"DRIVER={{ODBC Driver 17 for SQL Server}};"
+    f"DRIVER={};"
     f"SERVER={server};"
     f"DATABASE={database};"
     f"Trusted_Connection=yes;"
 )
 engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
+
